@@ -1,0 +1,28 @@
+# 3ds Max Wavefront OBJ Exporter v0.97b - (c)2007 guruware
+# File Created: 03.01.2012 11:57:49
+
+newmtl Ball_and_Chain_Flail_body
+	Ns 49.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 1.0000 1.0000 1.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.7200 0.7200 0.7200
+	Ke 0.0000 0.0000 0.0000
+	map_Ka Ball_and_Chain_Flail.jpg
+	map_Kd Ball_and_Chain_Flail.jpg
+
+newmtl Ball_and_Chain_Flail_detail
+	Ns 85.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.2235 0.2235 0.2235
+	Kd 0.2235 0.2235 0.2235
+	Ks 0.3600 0.3600 0.3600
+	Ke 0.0000 0.0000 0.0000
