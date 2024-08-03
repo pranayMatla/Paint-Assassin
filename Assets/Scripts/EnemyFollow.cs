@@ -18,5 +18,6 @@ public class EnemyFollow : MonoBehaviour
     void Update()
     {
         enemy.SetDestination(player.position);
+        //pranay;
     }
 }
