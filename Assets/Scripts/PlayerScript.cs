@@ -1,6 +1,7 @@
 using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
+
 {
     public int health = 3; // Player health
 

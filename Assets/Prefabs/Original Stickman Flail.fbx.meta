@@ -33,7 +33,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Armature.001|Armature.001|Armature.001|Armature.001|Armature.001|Armature.00
+      name: Flail Weapon Walk
       takeName: Armature.001|Armature.001|Armature.001|Armature.001|Armature.001|Armature.00
       internalID: 6039529971866693846
       firstFrame: 0
@@ -62,7 +62,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature.007|Armature.007|mixamo.com|Layer0
+      name: Flail Target Walk
       takeName: Armature.007|Armature.007|mixamo.com|Layer0
       internalID: 387353941403430903
       firstFrame: 0

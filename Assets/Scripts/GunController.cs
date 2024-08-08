@@ -6,10 +6,10 @@ public class GunController : MonoBehaviour
     public GameObject projectilePrefab;
     public Transform shootPoint; // This is where projectiles will spawn
     public float projectileSpeed = 20f;
-    public float rotationSpeed = 5f; // Reduced rotation speed for smoother and smaller movement
+    public float rotationSpeed = 5f; // Speed of rotation
     public float returnDelay = 1f;  // Delay before returning to default position
-    public float maxRotationAngleX = 5f; // Reduced maximum rotation angle on X-axis (up and down)
-    public float maxRotationAngleY = 15f; // Reduced maximum rotation angle on Y-axis (left and right)
+    public float maxRotationAngleX = 5f; // Maximum rotation angle on X-axis (up and down)
+    public float maxRotationAngleY = 15f; // Maximum rotation angle on Y-axis (left and right)
     public float aimThreshold = 1f; // Threshold for aiming accuracy
     private Quaternion defaultRotation;
     private Coroutine returnRoutine;
@@ -27,6 +27,7 @@ public class GunController : MonoBehaviour
             return;
         }
 
+        // Save the initial rotations
         defaultRotation = transform.localRotation;
         targetRotation = defaultRotation;
 
@@ -98,13 +99,16 @@ public class GunController : MonoBehaviour
             // Calculate rotation towards the tapped position
             Quaternion lookRotation = Quaternion.LookRotation(direction, Vector3.up);
             lookRotation = ClampRotation(lookRotation);
-            targetRotation = lookRotation;
+
+            // Apply the initial Y rotation offset to the target rotation
+            targetRotation = Quaternion.Euler(transform.localRotation.eulerAngles.x, lookRotation.eulerAngles.y, transform.localRotation.eulerAngles.z);
         }
     }
 
     void SmoothRotateGun()
     {
-        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
+        // Smoothly rotate the gun towards the target rotation
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
     }
 
     Quaternion ClampRotation(Quaternion rotation)
